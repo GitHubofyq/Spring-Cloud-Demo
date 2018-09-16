@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>eureka-server</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Service Registry Centers project for Spring Boot</description>
 
     <parent>
         <groupId>com.example</groupId>
@@ -17,12 +17,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-
     <dependencies>
+
+        <!--The security auto-configuration is no longer customizable-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
@@ -35,7 +37,5 @@
         </dependency>
 
     </dependencies>
-
-
 
 </project>

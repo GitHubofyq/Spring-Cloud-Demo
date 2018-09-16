@@ -9,5 +9,11 @@
         <module name="eureka-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="commonutil" target="1.8" />
+      <module name="service-common" target="1.8" />
+      <module name="service-provider" target="1.8" />
+      <module name="serviceprovider" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
