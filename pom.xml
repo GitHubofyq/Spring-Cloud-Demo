@@ -12,7 +12,7 @@
     <name>spring-cloud-demo</name>
     <description>Parent project for maven empty</description>
 
-    <!-- spring boot -->
+    <!-- 父 spring boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -20,9 +20,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <!-- 子模块 -->
     <modules>
         <module>eureka-server</module>
-        <module>service-common</module>
     </modules>
 
     <properties>
