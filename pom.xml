@@ -23,6 +23,7 @@
     <!-- 子模块 -->
     <modules>
         <module>eureka-server</module>
+        <module>common</module>
     </modules>
 
     <properties>
