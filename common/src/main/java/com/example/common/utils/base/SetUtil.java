@@ -13,8 +13,8 @@ public class SetUtil {
     public static void main(String[] args) {
         System.out.println("-6>>>1:"+(6>>>1));
 
-        Long[] arr1 = new Long[]{12L};
-        Long[] arr2 = new Long[]{6L,9L,21L};
+        Long[] arr1 = new Long[]{1L, 3L, 5L, 6L};
+        Long[] arr2 = new Long[]{1L, 3L, 2L};
 
         System.out.println("----------并集------------");
         Long[] andArr = getAndArr(arr1, arr2);
@@ -31,7 +31,11 @@ public class SetUtil {
         for (Long a : subtractionArr) {
             System.out.println("=>"+a);
         }
+
+//        Subtraction(arr1, arr2);
     }
+
+
 
     /**
      * 求差集(相对补集, 绝对补集)
@@ -39,16 +43,23 @@ public class SetUtil {
      **/
     public static Long[] getSubtraction(Long[] subArr, Long[] minuendArr) {
         LinkedList<Long> list = new LinkedList<>();
-        Set<Long> set = new HashSet<>(Arrays.asList(subArr));
-        for (Long b : minuendArr) {
-            if (set.contains(b)) {
-                list.remove(b);
-            } else {
-                list.add(b);
+        Set<Long> set = new HashSet<>(Arrays.asList(subArr)); // 减数转为Set
+        for (Long b : minuendArr) { // 遍历被减数
+            if (!set.contains(b)) {
+                list.add(b);    // 累加与减数不同的元素
             }
         }
         Long[] result = {};
         return list.toArray(result);
+    }
+
+    /**
+     * 差集, 默认:大-小
+     **/
+    public <T> List<T> Subtraction(List<T> arr1, List<T> arr2) {
+        List<T> result = null;
+//        T[] resultType = new {};
+        return null;
     }
 
     /**

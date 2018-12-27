@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 
 public class RequestUtil {
 
-    public static ThreadLocal<HttpServletRequest> local = new ThreadLocal();
+    public static ThreadLocal<HttpServletRequest> local = new ThreadLocal(); // 本地线程对象
 
     /**
      * 获取登录用户IP地址

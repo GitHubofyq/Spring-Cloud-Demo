@@ -24,6 +24,7 @@
     <modules>
         <module>eureka-server</module>
         <module>common</module>
+        <module>file-server</module>
     </modules>
 
     <properties>
