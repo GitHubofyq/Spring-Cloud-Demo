@@ -1,6 +1,7 @@
 package com.example.file.server.controller;
 
 import org.apache.commons.fileupload.disk.DiskFileItem;
+import org.apache.commons.io.FilenameUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,11 @@ public class UploadController {
             System.out.println("不是图片");
             return 0;
         }
+
+        // 原始文件名
+        String originName = file.getOriginalFilename();
+        // 文件后缀(扩展名)
+        String extName = FilenameUtils.getExtension(originName);
 
         return 0;
     }

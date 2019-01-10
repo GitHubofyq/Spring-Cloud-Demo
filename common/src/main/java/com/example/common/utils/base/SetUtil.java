@@ -1,5 +1,7 @@
 package com.example.common.utils.base;
 
+import com.sun.xml.internal.ws.server.sei.SEIInvokerTube;
+
 import java.util.*;
 
 /**
@@ -14,7 +16,7 @@ public class SetUtil {
         System.out.println("-6>>>1:"+(6>>>1));
 
         Long[] arr1 = new Long[]{1L, 3L, 5L, 6L};
-        Long[] arr2 = new Long[]{1L, 3L, 2L};
+        Long[] arr2 = new Long[]{1L, 3L, 2L, 4L};
 
         System.out.println("----------并集------------");
         Long[] andArr = getAndArr(arr1, arr2);
@@ -32,7 +34,13 @@ public class SetUtil {
             System.out.println("=>"+a);
         }
 
-//        Subtraction(arr1, arr2);
+        System.out.println("----------差集2------------");
+        String[] a1 = {"a", "b", "c"};
+        String[] a2 = {"a", "d", "e"};
+        List<String> list = Subtraction2(a1, a2);
+        for (String a : list) {
+            System.out.println("==>"+a);
+        }
     }
 
 
@@ -56,10 +64,33 @@ public class SetUtil {
     /**
      * 差集, 默认:大-小
      **/
-    public <T> List<T> Subtraction(List<T> arr1, List<T> arr2) {
+    public static <T> T[] Subtraction(T[] arr1, T[] arr2) {
         List<T> result = null;
-//        T[] resultType = new {};
+//        result.toArray(T[10]);
         return null;
+    }
+
+    public static <T> List<T> Subtraction2(T[] arr1, T[] arr2) {
+        int n1 = arr1.length;
+        int n2 = arr2.length;
+        T[] longArr = arr1;
+        T[] shortArr = arr2;
+        if (n1 < n2) {
+            longArr = arr2;
+            shortArr = arr1;
+        }
+
+        // 将较长的数组转为Set
+        HashSet<T> set = new HashSet<>(Arrays.asList(longArr));
+        // 遍历较短的数组
+        for (T t : shortArr) {
+            if (set.contains(t)) {
+                set.remove(t);
+            } else {
+                set.add(t);
+            }
+        }
+        return new ArrayList<>(set);
     }
 
     /**
