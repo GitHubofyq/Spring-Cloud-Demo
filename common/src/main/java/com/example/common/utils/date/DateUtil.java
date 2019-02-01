@@ -22,8 +22,9 @@ public class DateUtil {
     public static final String PST = "PST"; // 太平洋标准时间
 
     public static final SimpleDateFormat Standard_Format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
     public static final SimpleDateFormat UTC_Format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+    public static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
 
     public static void main(String[] args) {
         String utcTimeStr = getUTCTimeStr();
@@ -38,19 +39,22 @@ public class DateUtil {
 
     }
 
+    /***
+     * 日期是否是今天
+     **/
+    public static boolean isToday(Date date) {
+        String param = sdf.format(date);
+        String now = sdf.format(new Date());
+        if (now.equals(param)) {
+            return true;
+        }
+        return false;
+    }
+
     public static String getUTCTimeStr() {
         Date utcTime = getUTCTime();
         String format = UTC_Format.format(utcTime);
         return format;
-    }
-
-    private static String dateFormat(Date dateTime, String pattern) {
-        String dateStr = null;
-        if (null != dateTime) {
-            SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
-            dateStr = dateFormat.format(dateTime);
-        }
-        return dateStr;
     }
 
     public static Date getUTCTime() {
