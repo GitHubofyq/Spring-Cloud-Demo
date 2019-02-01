@@ -1,8 +1,6 @@
 package com.example.common.utils.date;
 
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -15,7 +13,6 @@ import java.util.TimeZone;
  * @ Author     ：yuqin
  * @ createTime : 2019-01-09
  */
-@Slf4j
 public class DateUtil {
 
     public static final String UTC = "UTC"; // 协调世界时间
